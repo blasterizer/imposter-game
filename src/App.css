@@ -5,3 +5,7 @@ button { padding: 12px 16px; font-size: 16px; border-radius: 8px; }
 ul { list-style: none; padding: 0; }
 li { display: flex; justify-content: space-between; align-items: center; padding: 8px 0; border-bottom: 1px solid #444; }
 .big { width: 100%; margin-top: 16px; }
+.modes { display: flex; gap: 8px; margin-top: 16px; }
+.modes button { flex: 1; border: 2px solid transparent; }
+.modes .selected { border-color: #aa3bff; font-weight: bold; }
+.hint { font-size: 14px; opacity: 0.8; }
