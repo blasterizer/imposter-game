@@ -1,11 +1,65 @@
-.app { max-width: 420px; margin: 0 auto; padding: 24px 16px; text-align: center; }
+.app { max-width: 620px; margin: auto; padding: 24px 20px; }
+header { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 8px 0 24px; }
+.brand { display: flex; gap: 10px; align-items: center; color: #c2a4ff; font-size: 25px; }
+.brand span { color: #eeeaf7; font-size: 14px; letter-spacing: 3px; font-weight: 800; }
+.small { font-size: 12px; color: #b9b0c7; line-height: 1.6; }
+.progress { display: flex; gap: 6px; margin-bottom: 30px; }
+.progress span { flex: 1; font-size: 11px; padding-top: 10px; border-top: 3px solid #39313f; color: #9d92ab; text-align: center; }
+.progress .active { color: #d3baff; border-color: #bf9aff; }
+.progress .complete { border-color: #776090; }
+.content { display: grid; gap: 18px; animation: arrive .2s ease-out; }
+.intro { padding: 8px 0 12px; }
+.eyebrow { display: block; font-size: 10px; font-weight: 750; letter-spacing: 1.6px; color: #c2a4ff; margin-bottom: 18px; }
+.intro p { margin-top: 16px; font-size: 15px; max-width: 390px; }
+.panel { background: #201b29; border: 1px solid #3a3047; padding: 24px; border-radius: 22px; box-shadow: 0 12px 40px #0002; }
+.section-heading { display: flex; justify-content: space-between; align-items: center; margin-bottom: 18px; }
+.badge { display: inline-block; font-size: 11px; border-radius: 20px; background: #34293f; color: #d2b9f4; padding: 5px 10px; white-space: nowrap; }
 .row { display: flex; gap: 8px; }
-.row input { flex: 1; padding: 12px; font-size: 16px; border-radius: 8px; border: 1px solid #888; }
-button { padding: 12px 16px; font-size: 16px; border-radius: 8px; }
-ul { list-style: none; padding: 0; }
-li { display: flex; justify-content: space-between; align-items: center; padding: 8px 0; border-bottom: 1px solid #444; }
-.big { width: 100%; margin-top: 16px; }
-.modes { display: flex; gap: 8px; margin-top: 16px; }
-.modes button { flex: 1; border: 2px solid transparent; }
-.modes .selected { border-color: #aa3bff; font-weight: bold; }
-.hint { font-size: 14px; opacity: 0.8; }
+.row input { flex: 1; }
+.primary { background: #c2a4ff; border-color: #c2a4ff; color: #21152f; }
+.primary:hover:not(:disabled) { background: #d3bdff; }
+.big { display: block; width: 100%; min-height: 54px; }
+.player-list { margin: 14px 0; }
+.player-list li, .speaking-order li { display: flex; align-items: center; gap: 12px; padding: 10px 0; border-bottom: 1px solid #3c3247; }
+.player-list li:last-child, .speaking-order li:last-child { border-bottom: 0; }
+.player-name { flex: 1; min-width: 0; overflow-wrap: anywhere; }
+.avatar { display: grid; place-items: center; width: 30px; height: 30px; flex-shrink: 0; border-radius: 10px; background: #362b43; color: #ceb4fa; font-size: 12px; }
+.icon-button { min-width: 44px; min-height: 44px; padding: 6px; background: transparent; font-size: 23px; border: 0; color: #b9b0c7; }
+.empty { padding: 24px 0; font-size: 14px; }
+.error { color: #ffb4bf; font-size: 13px; padding-top: 10px; }
+.mode-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 18px 0 22px; }
+.mode-card { text-align: left; padding: 16px; font-weight: 400; }
+.mode-card > span { display: flex; justify-content: space-between; font-weight: 700; margin-bottom: 10px; }
+.mode-card small { display: block; line-height: 1.6; color: #c1b5d0; }
+.selected { border-color: #c2a4ff; background: #392b4c; }
+.settings { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 14px; }
+.settings label, .input-label { display: block; font-size: 12px; color: #c7bad7; }
+.settings select { margin-top: 7px; font-size: 13px; }
+.full { grid-column: 1 / -1; }
+.rules { padding: 16px 20px; border: 1px solid #3a3047; border-radius: 14px; color: #c1b5d0; font-size: 13px; }
+.rules summary { cursor: pointer; font-weight: 600; min-height: 28px; align-content: center; }
+.rules ol { padding-left: 20px; line-height: 1.7; }
+.rules li { margin-bottom: 8px; }
+.centered { text-align: center; }
+.game-panel { padding: 36px 28px; text-align: center; }
+.game-panel h1 { margin-bottom: 18px; }
+.game-panel > p { font-size: 15px; }
+.game-panel .big { margin-top: 16px; }
+.handoff-icon { display: grid; place-items: center; width: 72px; height: 72px; margin: 12px auto 28px; border-radius: 22px; border: 1px solid #72558f; background: #382947; font-size: 38px; color: #d4b9ff; }
+.secret { padding: 35px 18px; margin: 22px 0; border: 1px solid #9770bc; background: linear-gradient(135deg, #47305f, #2f233f); border-radius: 18px; font-size: clamp(28px, 6vw, 40px); font-weight: 750; color: #f4eaff; overflow-wrap: anywhere; }
+.speaking-order { list-style: none; padding: 0; margin: 24px 0; text-align: left; }
+.timer { padding: 18px; background: #16131e; border-radius: 14px; margin-bottom: 22px; }
+.timer > span { font-size: 40px; font-variant-numeric: tabular-nums; }
+.timer p { font-size: 12px; margin: 8px 0 14px; }
+.timer button { margin: 0 4px; }
+.vote-list { display: grid; gap: 10px; margin-top: 24px; }
+.vote-list button { display: flex; justify-content: space-between; text-align: left; overflow-wrap: anywhere; gap: 12px; }
+.input-label { text-align: left; margin: 28px 0 8px; }
+.result-card { display: grid; gap: 8px; background: #30243f; border: 1px solid #6a4a87; border-radius: 18px; padding: 24px; margin: 24px 0; }
+.result-card strong { font-size: 24px; overflow-wrap: anywhere; }
+.result-card .small:not(:first-child) { margin-top: 12px; }
+.result-heading, .game-panel .player-list, .game-panel .rules { text-align: left; }
+footer { text-align: center; font-size: 11px; color: #9d92ab; padding: 30px 0 12px; }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+@keyframes arrive { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
+@media (max-width: 420px) { .app { padding: 16px 14px; } header > .small { max-width: 125px; text-align: right; } .panel { padding: 20px 16px; } .game-panel { padding: 30px 20px; } .mode-card { padding: 12px; } .settings { gap: 10px; } }

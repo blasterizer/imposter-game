@@ -1,33 +1,26 @@
-// Each pair: the word most players get, and a related word for the impostor in Twist mode
-export const WORD_PAIRS = [
-  { word: 'Airport', related: 'Train station' },
-  { word: 'Beach', related: 'Swimming pool' },
-  { word: 'Hospital', related: 'Pharmacy' },
-  { word: 'School', related: 'College' },
-  { word: 'Cinema', related: 'Theatre' },
-  { word: 'Restaurant', related: 'Food truck' },
-  { word: 'Cricket', related: 'Baseball' },
-  { word: 'Football', related: 'Rugby' },
-  { word: 'Birthday party', related: 'Wedding' },
-  { word: 'Train', related: 'Bus' },
-  { word: 'Library', related: 'Bookshop' },
-  { word: 'Zoo', related: 'Safari' },
-  { word: 'Gym', related: 'Yoga class' },
-  { word: 'Supermarket', related: 'Local market' },
-  { word: 'Temple', related: 'Church' },
-  { word: 'Space station', related: 'Airplane' },
-  { word: 'Pizza', related: 'Burger' },
-  { word: 'Biryani', related: 'Pulao' },
-  { word: 'Ice cream', related: 'Kulfi' },
-  { word: 'Tea', related: 'Coffee' },
-  { word: 'Doctor', related: 'Nurse' },
-  { word: 'Police officer', related: 'Security guard' },
-  { word: 'Teacher', related: 'Principal' },
-  { word: 'Chef', related: 'Waiter' },
-  { word: 'Mobile phone', related: 'Tablet' },
-  { word: 'Laptop', related: 'Desktop computer' },
-  { word: 'Umbrella', related: 'Raincoat' },
-  { word: 'Elephant', related: 'Rhino' },
-  { word: 'Monsoon', related: 'Winter' },
-  { word: 'Diwali', related: 'Holi' },
-]
+// Easy pairs are familiar and distinct; tricky pairs reward more careful clues.
+const groups = {
+  Places: {
+    Easy: [['Airport','Train station'],['Beach','Swimming pool'],['Hospital','Pharmacy'],['School','College'],['Cinema','Theatre'],['Restaurant','Food truck'],['Library','Bookshop'],['Zoo','Safari'],['Gym','Yoga class'],['Supermarket','Local market']],
+    Tricky: [['Museum','Art gallery'],['Hotel','Hostel'],['Castle','Palace'],['Balcony','Terrace'],['Park','Garden'],['Bakery','Cafe'],['Desert','Sand dune'],['Island','Peninsula']],
+  },
+  Food: {
+    Easy: [['Pizza','Burger'],['Biryani','Pulao'],['Ice cream','Kulfi'],['Tea','Coffee'],['Pasta','Noodles'],['Cake','Cookies'],['Popcorn','Chips'],['Mango','Peach'],['Chocolate','Caramel'],['Soup','Salad']],
+    Tricky: [['Pancake','Waffle'],['Jam','Marmalade'],['Lemon','Lime'],['Butter','Margarine'],['Yogurt','Custard'],['Cappuccino','Latte'],['Dumpling','Ravioli'],['Honey','Syrup']],
+  },
+  'Everyday life': {
+    Easy: [['Train','Bus'],['Doctor','Nurse'],['Police officer','Security guard'],['Teacher','Principal'],['Chef','Waiter'],['Mobile phone','Tablet'],['Laptop','Desktop computer'],['Umbrella','Raincoat'],['Bicycle','Scooter'],['Clock','Calendar']],
+    Tricky: [['Notebook','Diary'],['Backpack','Suitcase'],['Headphones','Earbuds'],['Elevator','Escalator'],['Mirror','Window'],['Candle','Lantern'],['Sofa','Armchair'],['Key','Password']],
+  },
+  'Nature & animals': {
+    Easy: [['Elephant','Rhino'],['Monsoon','Winter'],['Cat','Dog'],['Lion','Tiger'],['River','Lake'],['Mountain','Hill'],['Moon','Sun'],['Butterfly','Bee'],['Snow','Rain'],['Forest','Jungle']],
+    Tricky: [['Crocodile','Alligator'],['Turtle','Tortoise'],['Frog','Toad'],['Dolphin','Whale'],['Mist','Cloud'],['Stream','Creek'],['Thunder','Lightning'],['Sunrise','Sunset']],
+  },
+  'Fun & celebrations': {
+    Easy: [['Cricket','Baseball'],['Football','Rugby'],['Birthday party','Wedding'],['Diwali','Holi'],['Space station','Airplane'],['Camping','Picnic'],['Chess','Checkers'],['Swimming','Surfing'],['Guitar','Piano'],['Dancing','Singing']],
+    Tricky: [['Tennis','Badminton'],['Marathon','Sprint'],['Concert','Festival'],['Magic trick','Illusion'],['Bowling','Skittles'],['Painting','Drawing'],['Ballet','Gymnastics'],['Karaoke','Open mic']],
+  },
+}
+export const WORD_PAIRS = Object.entries(groups).flatMap(([category, levels]) =>
+  Object.entries(levels).flatMap(([difficulty, pairs]) =>
+    pairs.map(([word, related]) => ({ word, related, category, difficulty }))))

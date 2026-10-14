@@ -1,16 +1,13 @@
-# React + Vite
+# Impostor
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A mobile-friendly, pass-the-phone party game for 3–20 players.
 
-Currently, two official plugins are available:
+## Play
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Add your group and choose Classic (the impostor bluffs without a word) or Twist (the impostor unknowingly receives a related word). Each player privately reveals their word, everyone gives clues, and the group votes using private handoff screens. A caught impostor gets one final guess; a tied vote lets them escape.
 
-## React Compiler
+Includes 90 word pairs, five categories, Easy and Tricky difficulty, speaking order, optional discussion timers, and session scores. Word pairs do not repeat until the selected pool is exhausted. Player names and mode are saved locally on the device; refreshing resets the active round, scores, and word history.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Development
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Run `npm install`, then `npm run dev`. Use `npm run build` for production, `npm run lint` for lint checks, and `npm test` for game-rule tests.
