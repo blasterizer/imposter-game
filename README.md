@@ -1,4 +1,4 @@
-# Impostor
+# Impostor Syndrome
 
 A mobile-friendly, pass-the-phone party game for 3–20 players.
 
@@ -11,3 +11,4 @@ Includes 90 word pairs, five categories, Easy and Tricky difficulty, speaking or
 ## Development
 
 Run `npm install`, then `npm run dev`. Use `npm run build` for production, `npm run lint` for lint checks, and `npm test` for game-rule tests.
+
