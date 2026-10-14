@@ -1,4 +1,13 @@
-:root { font-family: 'Segoe UI', system-ui, sans-serif; color: #eeeaf7; background: #111019; font-synthesis: none; text-rendering: optimizeLegibility; -webkit-font-smoothing: antialiased; color-scheme: dark; }
+:root {
+  --background: #111019;
+  --surface: #201b29;
+  --accent: #c2a4ff;
+  --success: #8ee3c5;
+  --text: #eeeaf7;
+  --muted: #b9b0c7;
+  --danger: #ffb4bf;
+  font-family: 'Segoe UI', system-ui, sans-serif; color: var(--text); background: var(--background); font-synthesis: none; text-rendering: optimizeLegibility; -webkit-font-smoothing: antialiased; color-scheme: dark;
+}
 * { box-sizing: border-box; }
 body { margin: 0; min-width: 320px; background: radial-gradient(ellipse at 50% 0%, #29203c 0%, #111019 65%); }
 button, input, select { font: inherit; }
